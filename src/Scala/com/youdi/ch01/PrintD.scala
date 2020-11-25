@@ -12,5 +12,6 @@ object PrintD {
     printf("name:%s,age is %d", name, age)
 
     println(s"name is $name, age is ${age}")
+    println(s"name is $name, age is ${age * 10}")
   }
 }
