@@ -14,7 +14,6 @@ object D01 {
 }
 
 // 声明一个对象 伴生对象
-
 object Cat extends AAA
 
 
