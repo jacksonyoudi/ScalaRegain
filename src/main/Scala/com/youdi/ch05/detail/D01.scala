@@ -9,9 +9,13 @@ object D01 {
 
     println("ok")
 
+    def sayHello(): Unit = { // private final sayHello$1
+      println("sayHello")
+    }
+
   }
 
-  def sayHello(): Unit = {
+  def sayHello(): Unit = { // 成员
     println("Hello")
   }
 
