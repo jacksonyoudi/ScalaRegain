@@ -12,6 +12,27 @@ object MemState {
     p2.age = 90
     println(p1.age)
 
+    //
+    val unit: Unit = {}
+    unit.isInstanceOf[Unit] // boolean
+
+    for (i <- (1 to 10).reverse) {
+      println(i)
+    }
+
+    // 使用了高阶函数的特性
+    // foreach函数(f:Int => U) 表示接收一个输入参数为Int， 输出为U的函数
+    (0 to 10).reverse.foreach(println)
+
+    // foreach表示遍历所有元素，当成参数传给println
+    (0 to 10).reverse.foreach {
+      i => {
+        println(i)
+      }
+    }
+    var sum: Long = 1
+    "Hello".foreach(sum *= _.toLong)
+    println(sum)
   }
 }
 
