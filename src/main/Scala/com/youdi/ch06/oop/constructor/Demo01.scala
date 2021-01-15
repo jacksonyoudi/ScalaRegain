@@ -10,7 +10,14 @@ package com.youdi.ch06.oop.constructor
  * 主构造器的声明直接放置于类名之后
  * 主构造器会执行类定义中所有语句 除去  method的
  * 如果主构造器无参数，小括号可以省略
- * 辅助构造器是使用this， 辅助构造器必须第一行调用 this
+ * 辅助构造器是使用this， 辅助构造器必须第一行 直接或间接 调用 this
+ *
+ *
+ * 构造器 前加一个private就是私有的
+ *
+ * 主构造器前加一个 private  class A private() {}
+ *
+ * 辅助构造器和主构造器不能相同
  */
 object Demo01 {
   def main(args: Array[String]): Unit = {
