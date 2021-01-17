@@ -15,6 +15,7 @@
  *
  */
 package cn.youdi.oop.pkg {
+
   class User {
 
   }
@@ -23,6 +24,20 @@ package cn.youdi.oop.pkg {
     def main(args: Array[String]): Unit = {
       import cn.youdi.oop.pkg.b1.D02
       val d: D02 = new D02
+    }
+  }
+
+  // cn.youdi.oop.pkg.b1的包对象的包对象
+  // 每一个包都可以有一个包对象，而且只能有一个
+  // 包对象的名称必须要和子包一致
+  // 在包对象中可以定义变量和方法，就可以在对应的包中使用
+  // 在包对象定义的  方法和变量，可以在对应子包中直接使用
+  package object b1 {
+    val name: String = "jack"
+    val age: Int = 10
+
+    def say(): Unit = {
+      println("hi")
     }
   }
 
@@ -37,6 +52,9 @@ package cn.youdi.oop.pkg {
         // 如果有重名的类，采用就近原则
         // 如果使用父包的类，就使用 全路径
         val user = new User // 就近原则，
+        println(name)
+        println(age)
+        say
       }
     }
 
