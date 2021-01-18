@@ -32,6 +32,7 @@ package cn.youdi.oop.pkg {
   // 包对象的名称必须要和子包一致
   // 在包对象中可以定义变量和方法，就可以在对应的包中使用
   // 在包对象定义的  方法和变量，可以在对应子包中直接使用
+  // 在底层会生成2个类一个是 package.class， 一个是 package$.class
   package object b1 {
     val name: String = "jack"
     val age: Int = 10

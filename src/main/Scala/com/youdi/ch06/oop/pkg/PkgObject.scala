@@ -7,6 +7,18 @@ package com.youdi.ch06.oop.pkg
  *
  *
  * 在包中直接定义函数和方法是会报错的 =》 使用包对象的技术来解决
+ *
+ *
+ *
+ * class object
+ * 伴生对象和伴生类
+ * 因为scala设计者将static拿掉了， 加了 object
+ * 伴生类 写 非静态的内容， 伴生对象 就是静态内容
+ *
+ * 私有属性可以在class和 object中访问
+ *
+ * 增加 权限访问
+ * private[scala]
  */
 
 object PkgObject {
