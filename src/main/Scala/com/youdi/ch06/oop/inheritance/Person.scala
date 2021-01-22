@@ -10,7 +10,19 @@ class Person {
 }
 
 class Student extends Person {
+
+
+  override def info(): Unit = {
+    println("stu name:" + name + " age:")
+  }
+
   def studying(): Unit = {
     println("studying....")
+  }
+}
+
+class Emp extends Person {
+  def say(): Unit = {
+    println("hello")
   }
 }
