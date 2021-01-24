@@ -9,7 +9,7 @@ package com.youdi.ch06.traitd
  */
 object D04 {
   def main(args: Array[String]): Unit = {
-    val cc: CC with Mn = new CC with Mn {
+    val cc: CCC with Mn = new CCC with Mn {
       override var sal = 100
     }
     println(cc.name)
@@ -23,4 +23,4 @@ trait Mn {
   var sal: Int
 }
 
-class CC {}
+class CCC {}
