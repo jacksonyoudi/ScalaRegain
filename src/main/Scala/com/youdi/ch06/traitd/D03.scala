@@ -4,6 +4,10 @@ object D03 {
   def main(args: Array[String]): Unit = {
     val d: D with C with B = new D with C with B
     d.insert(100)
+
+    // 错误
+//    val d1: D with C with B = new D with B with C
+//    d.insert(80)
   }
 }
 
