@@ -18,7 +18,17 @@ object D01 {
     val l: MySQL with DB = new MySQL with DB
     l.insert(80)
 
-//    new MySQL{} // 表示匿名子类
+    //    new MySQL{} // 表示匿名子类
+
+    val pq: PQ with DB = new PQ with DB {
+      override def say(): Unit = {
+        println("hello")
+      }
+    }
+
+    pq.say()
+    pq.insert(70)
+
   }
 }
 
@@ -36,4 +46,8 @@ class Oracle {
 
 abstract class MySQL {
 
+}
+
+abstract class PQ {
+  def say()
 }
