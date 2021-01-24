@@ -7,6 +7,7 @@ package com.youdi.ch06.traitd
  * 2. 可以应用于对象类功能扩展
  * 3. 动态混入是scala特有的方式，可在不修改类声明/定义的情况下，扩展类的功能，非常灵活 耦合性低
  * 4. 动态混入可以在不影响原有的继承关系的基础上，给指定的类扩展功能。
+ * 5.
  */
 object D01 {
   def main(args: Array[String]): Unit = {
@@ -20,6 +21,7 @@ object D01 {
 
     //    new MySQL{} // 表示匿名子类
 
+    // 抽象方法中有实现的方法，如何混入特质
     val pq: PQ with DB = new PQ with DB {
       override def say(): Unit = {
         println("hello")
