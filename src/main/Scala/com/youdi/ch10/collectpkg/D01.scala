@@ -16,5 +16,6 @@ package com.youdi.ch10.collectpkg
 object D01 {
   def main(args: Array[String]): Unit = {
 
+
   }
 }
