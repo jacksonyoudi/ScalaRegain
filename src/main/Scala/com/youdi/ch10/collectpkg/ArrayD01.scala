@@ -22,6 +22,11 @@ object ArrayD01 {
       println(elem)
     }
 
+    // 使用index 方式
+    for (index <- 0 until array.length) {
+      println(array(index))
+    }
+
   }
 
 }
