@@ -7,9 +7,17 @@ package com.youdi.ch10.collectpkg
  */
 object TupleD01 {
   def main(args: Array[String]): Unit = {
-    val tuple: (Int, Int, Int, String, Int) = (1, 2, 3, "hello", 4)
+    val tuple: (Int, Int, Int, String, Int) = (1, 2, 3, "hello", 4) //  tuple5
     println(tuple)
     println(tuple._1)
     println(tuple._5)
+    println(tuple.productElement(0))
+
+    // 遍历元祖, 需要使用迭代器
+    for (elem <- tuple.productIterator) {
+      println(elem)
+    }
+
+    //
   }
 }
