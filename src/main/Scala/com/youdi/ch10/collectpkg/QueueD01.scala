@@ -19,8 +19,13 @@ object QueueD01 {
     println(q1)
     //
     q1.enqueue(10)
+    q1.enqueue(90, 80, 40)
 
     println(q1)
+
+    println(q1.head)
+    println(q1.tail) // 除了 head都叫 tail,返回的是队列 可以级联使用
+    println(q1.last)
   }
 }
 
