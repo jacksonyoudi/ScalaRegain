@@ -9,12 +9,37 @@ object MapOpD02 {
 
 
     println(l2)
+
+
+    println(MyList(1, 2, 3, 4).map(multiple))
   }
 
 
   def multiple(n: Int): Int = {
     println("调用")
     2 * n
+  }
+}
+
+
+class MyList(inList: List[Int]) {
+  val l1: List[Int] = inList
+  var l2: List[Int] = List[Int]()
+
+  // 写 map
+  def map(f: Int => Int): List[Int] = {
+    for (item <- l1) {
+      l2 = l2 :+ f(item)
+    }
+
+    l2
+  }
+
+}
+
+object MyList {
+  def apply(l: Int*): MyList = {
+    new MyList(l.toList)
   }
 }
 
