@@ -27,7 +27,7 @@ object D01 {
     val i: Int = op match {
       case "+" => n1 + n2
       case "*" => n1 * n2
-      case 10 => 10
+//      case 10 => 10
       case _ => 0
     }
 
