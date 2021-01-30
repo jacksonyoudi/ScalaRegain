@@ -17,7 +17,7 @@ object D03 {
 
     var ch = "+"
     var res = ch match {
-      case '+' => ch + " Hello "
+      case "+" => ch + " Hello "
       case _ => println("ok")
     }
 
