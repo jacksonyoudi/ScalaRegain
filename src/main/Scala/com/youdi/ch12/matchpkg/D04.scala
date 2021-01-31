@@ -4,6 +4,12 @@ package com.youdi.ch12.matchpkg
 /**
  * 类型匹配
  * 可以匹配对象的类型， 这样可以避免了使用isInstanceOf和asInstanceOf方法
+ *
+ * 1.Map[String, Int]和Map[Int, String]是不同类型的
+ * 2. 在进行类型匹配的时候，编译器会预先检测是否有可能的匹配，如果没有则报错。
+ * 3. 变量
+ * 4. 隐藏变量名
+ *
  */
 object D04 {
   def main(args: Array[String]): Unit = {
