@@ -14,7 +14,22 @@ package com.youdi.ch13
 
 object CaseD01 {
   def main(args: Array[String]): Unit = {
-      println("hello")
+    println("hello")
+
+
+    // 使用 unapply的 进行对象参数进行提取
+    val amounts: Array[Amount] = Array(Dollar(10000.0), Currency(100, "￥"), NoAmount)
+    for (item <- amounts) {
+      val str: String = item match {
+        case Dollar(v) => "$" + v
+        case Currency(v, u) => u + v
+        case NoAmount => ""
+      }
+
+      println(str)
+    }
+
+
   }
 }
 
