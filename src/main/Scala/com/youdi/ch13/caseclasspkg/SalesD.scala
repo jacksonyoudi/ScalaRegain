@@ -24,6 +24,16 @@ object SalesD {
       case Bundle(_, _, art@Book(_, _), rest) => (art, rest)
     }
     println(tuple1)
+
+    println(this.price(sales))
+  }
+
+
+  def price(it: Item): Double = {
+    it match {
+      case Book(_, p) => p
+      case Bundle(_, dis, its@_*) => its.map(price).sum - dis
+    }
   }
 }
 
