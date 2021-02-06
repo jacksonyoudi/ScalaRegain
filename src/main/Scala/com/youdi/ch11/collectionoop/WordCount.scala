@@ -1,6 +1,6 @@
 package com.youdi.ch11.collectionoop
 
-import scala.collection.{MapView, mutable}
+import scala.collection.mutable
 
 object WordCount {
   def main(args: Array[String]): Unit = {
@@ -20,7 +20,7 @@ object WordCount {
 
 
     println("-======================================")
-    val c1: MapView[String, Int] = l1.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.size)
+    val c1: Map[String, Int] = l1.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.size)
     print(c1.toMap)
 
   }

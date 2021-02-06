@@ -1,7 +1,6 @@
 package com.youdi.ch11.collectionoop
 
-import scala.collection.View
-
+import scala.collection.{SeqView, immutable}
 
 /**
  * Stream的懒加载方式，也可以对其他集合应用view方法得到类似的效果
@@ -24,7 +23,7 @@ object ViewD01 {
     println(l)
 
 
-    val v: View[Int] = (1 to 100).view.filter(a =>
+    val v: SeqView[Int, immutable.IndexedSeq[Int]] = (1 to 100).view.filter(a =>
       a.toString.equals(a.toString.reverse))
 
       // 没有使用

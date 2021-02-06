@@ -1,6 +1,6 @@
 package com.youdi.ch11.collectionoop
 
-import scala.collection.parallel.CollectionConverters._
+//import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.immutable.ParSeq
 
 object ParD01 {

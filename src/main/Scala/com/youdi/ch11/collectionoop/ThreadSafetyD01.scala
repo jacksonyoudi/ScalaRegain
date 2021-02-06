@@ -1,7 +1,7 @@
 package com.youdi.ch11.collectionoop
 
 
-import scala.collection.parallel.CollectionConverters._
+//import scala.collection.parallel.CollectionConverters._
 
 /**
  * Synchronized 开头的可变集合，是线程安全的

@@ -14,7 +14,8 @@ object Ex01 {
 
     val b: ArrayBuffer[Char] = new ArrayBuffer[Char]()
     a.foldLeft(b)((b, a) => {
-      b.addOne(a)
+      b.+=(a)
+
     })
 
     println(b)
