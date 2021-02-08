@@ -8,16 +8,11 @@ object D11 {
     val sparkconf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("RDD")
     val sc: SparkContext = new SparkContext(sparkconf)
 
-    // glom
-    val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4), 2)
-    // 每一个数据会返回一个key
-
-    def groupByFuction(num: Int): Int = {
-      num % 2
-    }
+    val rdd: RDD[String] = sc.makeRDD(List("Spark", "Scala", "Hadoop", "Hive"), 2)
 
 
-    val groupRDD: RDD[(Int, Iterable[Int])] = rdd.groupBy(groupByFuction)
+    // 注意， 分组和分区没有必然的关系  groupBy 会将数据打乱， 就是shuffle的过程
+    val groupRDD: RDD[(Char, Iterable[String])] = rdd.groupBy(_.charAt(0))
     groupRDD.collect().foreach(println)
 
     sc.stop()
