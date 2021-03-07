@@ -1,5 +1,7 @@
 package com.youdi.ch17.observer.pattern
 
+import java.util.Observable
+
 object Demo {
   def main(args: Array[String]): Unit = {
     val st: WeatherDataSt = new WeatherDataSt()
