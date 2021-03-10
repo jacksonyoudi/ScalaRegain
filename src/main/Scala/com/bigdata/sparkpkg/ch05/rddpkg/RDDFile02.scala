@@ -4,6 +4,8 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 
+
+
 /**
  * spark读取文件，底层其实使用的就是hadoop的读取方式
  * 1. spark读取文件，采用hadoop方式读取，所以一行一行读取， 和字节数没有关系
