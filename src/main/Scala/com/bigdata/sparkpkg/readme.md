@@ -8,4 +8,4 @@
 - BT协议
 - 可以被excutor中的多个task共享
 - sparkSQL中广播变量缺省是10M
-- jvm中的内存碰撞
+- jvm中的内存
