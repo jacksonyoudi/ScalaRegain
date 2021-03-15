@@ -72,6 +72,27 @@ mappartitions
 
 
 
+mapPartitionsWithIndex
+索引编号
+
+
+flatmap 函数是返回 iterators
+
+
+glom
+一个分区数据转换成一个数组
+
+
+groupBy 
+分组和分区没有必然关系的
+会将数据打乱重新组合， shuffle
+
+
+
+
+
+
+
 ### 双value类型
 
 
