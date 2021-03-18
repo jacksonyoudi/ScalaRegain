@@ -92,6 +92,34 @@ dependencies: 可以打印相邻的依赖关系
     shuffle依赖 打乱重组
 数据的依赖
 
+RDD阶段划分
+createResultStage
+一个shuffledependshuffle， 就会创建一个阶段
+
+阶段数量  = shuffle依赖的数量 + 1
+resultStage只有一个， 最后执行阶段
+
+
+RDD任务划分：
+Application
+    初始化一个SparkContext就生成一个Application
+
+Job：
+    一个action算子就会生成一个Job
+
+Stage: stage等于shuffleDependency的个数加1
+
+Task： 一个stage阶段中， 最后一个RDD的分区个数就是task的个数。 
+
+App李cation -> job -> stage -> Task 1对n
+
+
+
+shuffleMapStage => shuffleMapTask
+
+ResultStage => ResultTask
+
+
 
     
 
