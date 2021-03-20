@@ -121,7 +121,63 @@ ResultStage => ResultTask
 
 
 
-    
+
+### RDD持久化 
+* RDD不存储数据
+* 一个RDD需要重用，RDD对象可以重用， 但是数据不能重用，数据需要重头读取使用
+* 如果链路比较长的时候， 可以使用持久化， 为了恢复数据。
+
+
+cache 持久化到内存中
+persist()  可以选择级别 保存到临时文件的
+
+注意： 持久化只有在action算子的时候，才会进行缓存
+
+```scala
+  val NONE = new StorageLevel(false, false, false, false)
+  val DISK_ONLY = new StorageLevel(true, false, false, false)
+  val DISK_ONLY_2 = new StorageLevel(true, false, false, false, 2)
+  val MEMORY_ONLY = new StorageLevel(false, true, false, true)
+  val MEMORY_ONLY_2 = new StorageLevel(false, true, false, true, 2)
+  val MEMORY_ONLY_SER = new StorageLevel(false, true, false, false)
+  val MEMORY_ONLY_SER_2 = new StorageLevel(false, true, false, false, 2)
+  val MEMORY_AND_DISK = new StorageLevel(true, true, false, true)
+  val MEMORY_AND_DISK_2 = new StorageLevel(true, true, false, true, 2)
+  val MEMORY_AND_DISK_SER = new StorageLevel(true, true, false, false)
+  val MEMORY_AND_DISK_SER_2 = new StorageLevel(true, true, false, false, 2)
+  val OFF_HEAP = new StorageLevel(true, true, true, false, 1)
+```
+
+
+### checkpoint
+需要落盘
+需要指定到保存路径
+检查点路径保存的文件，当程序执行完毕后，不会被删除
+
+
+### 不同
+cache： 将数据临时存储在内存中进行数据重用
+persist: 将数据临时存储在文件系统上，涉及到IO,性能低，但是数据安全
+ 作业完成后，临时文件会被删除的
+会在血缘关系中，添加一段 cache的， 如果任务失败，可以重头读取数据
+
+
+checkpoint： 将数据长久保存在磁盘文件中进行数据重用涉及到磁盘IO性能较低， 但是数据安全
+为了保证数据安全，所有一本情况下，会独立执行作业，为了能够提高作业，会和cache联合使用的
+先cache，再做checkpoint也可以提高效率的。checkpoint() 直接从cache中拿数据
+执行过程汇总，会切断血缘关系，重新建立新的血缘关系。
+等同数据源发生了改变。
+
+
+
+### RDD分区器
+hashPartitioner
+
+
+
+
+
+
 
 
 
