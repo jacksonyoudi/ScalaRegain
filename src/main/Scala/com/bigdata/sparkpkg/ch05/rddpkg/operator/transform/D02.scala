@@ -23,7 +23,7 @@ object D02 {
       }
       ))
 
-    rdd.map()
+//    rdd.map()
 
     maprdd.collect().foreach(println)
 

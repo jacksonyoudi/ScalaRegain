@@ -6,7 +6,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object D01 {
   def main(args: Array[String]): Unit = {
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("save")
-    val sc: SparkContext = new SparkContext()
+    val sc: SparkContext = new SparkContext(conf)
     val mkRDD: RDD[(String, Int)] = sc.makeRDD(List(
       ("a", 1),
       ("b", 2),
