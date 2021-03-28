@@ -35,4 +35,6 @@ MVC：
 
 
 
-TreadLoacl 中缓存对象
+TreadLoacl 中缓存对象 
+共享线程中数据问题
+线程是不安全的
