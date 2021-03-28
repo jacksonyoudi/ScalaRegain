@@ -59,3 +59,17 @@ rdd必须是case clas就可以了
 rdd.toDs[]
 
 ```
+
+
+
+### spark sql 
+内置hive
+
+外置hive
+
+1. 将hive-site.xml copy到  spark的conf中
+2. jars中加上 mysql的驱动
+3. 如果访问不到hdfs， 则需要把core-site.xml和hdfs-site.xml拷贝到conf目录下
+4. 重启spark-shell
+
+

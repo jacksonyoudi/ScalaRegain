@@ -1,6 +1,5 @@
 package com.bigdata.sparkpkg.sql
 
-import com.bigdata.sparkpkg.sql.D01.User
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
