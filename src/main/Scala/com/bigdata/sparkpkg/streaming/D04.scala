@@ -14,7 +14,6 @@ object D04 {
       val words: DStream[String] = lines.flatMap(_.split(" "))
       val wordsMap: DStream[(String, Int)] = words.map((_, 1))
       val ds: DStream[(String, Int)] = wordsMap.reduceByKey(_ + _)
-
       ssc
 
     })
