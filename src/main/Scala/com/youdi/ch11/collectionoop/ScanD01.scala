@@ -8,7 +8,7 @@ object ScanD01 {
   def main(args: Array[String]): Unit = {
 
     // 第一元素，先保留 Vector(5, 4, 2, -1, -5, -10)
-    val list: IndexedSeq[Int] = (1 to 5).scanLeft(5)(_ - _)
+    val list: IndexedSeq[Int] = (1 to 5).scan(0)(_ + _)
     println(list)
   }
 }
